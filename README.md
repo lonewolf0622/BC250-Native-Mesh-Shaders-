@@ -80,6 +80,24 @@ DGC direct and mesh-count execution both passed through generated IB chaining.
 
 Project testing has also included Final Fantasy VII Rebirth rendering correctly through the native MESH path. That is a practical compatibility result, not a claim of full Vulkan conformance.
 
+### vkd3d-proton feature-level override
+
+For titles or launchers that otherwise fail the Direct3D feature-level check, the project testing setup uses:
+
+```bash
+VKD3D_FEATURE_LEVEL=12_2
+```
+
+For example:
+
+```bash
+VKD3D_FEATURE_LEVEL=12_2 %command%
+```
+
+when setting a Steam launch option.
+
+This only overrides vkd3d-proton's reported/selected D3D feature level for compatibility testing; it does not turn unsupported GPU features into hardware support.
+
 ## Architecture
 
 ### Direct MESH
